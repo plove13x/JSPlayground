@@ -2,7 +2,12 @@
   "name": "jsplayground",
   "private": true,
   "dependencies": {
-    "jquery": "~1.11.0"
+    "jquery": "~1.11.0",
+    "ember": "~1.13.1",
+    "handlebars": "~3.0.3"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "resolutions": {
+    "ember": "~1.13.1"
+  }
 }

@@ -22,10 +22,102 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="hero-unit">
-            <h1>plove's JS Playground</h1>
-            <p>So I've been doing a good amount of JavaScript coding lately, ranging from technical screenings that come along as part of the job application process to challenges on sites such as Codility to simply utilizing new techniques I've been studying in my free time. Not all of them are worthy of their own repository, but I've grown tired of letting this code float off into the ether. Welcome to the playground!</p>
-        </div>
+
+
+
+            <!-- {{#link-to '/'}}Home{{/link-to}} -->
+        <script type="text/x-handlebars">
+            <div class="hero-unit">
+                <h1>plove&#8217;s JS Playground</h1>
+                <p>So I&#8217;ve been doing a good amount of JavaScript coding lately, ranging from technical screenings that come along as part of the job application process to challenges on sites such as Codility to simply utilizing new techniques I&#8217;ve been studying in my free time. Not all of them are worthy of their own repository, but I&#8217;ve grown tired of letting this code float off into the cosmos. Welcome to the playground!</p>
+            </div>
+
+            {{#link-to 'index'}}Home{{/link-to}}
+            {{#link-to 'about'}}About{{/link-to}}
+            {{#link-to 'adaptiveInsights'}}Adaptive Insights{{/link-to}}
+            {{#link-to 'alexB'}}Alex B.{{/link-to}}
+
+            <div>    
+                {{outlet}}
+            </div>
+
+        </script>
+
+
+
+        <script type="text/x-handlebars" id="about">
+            HOOPLA!!!!!!!!!!
+            <button {{action "yo"}}>Add a Court!</button>
+        </script>
+
+
+
+        <script type="text/x-handlebars" id="adaptiveInsights">
+            #1. Write a method which given two integers, returns the integer that is closest to 1000. 
+            <form>
+                {{input type="text" value=int1}}
+                {{input type="text" value=int2}}
+            </form>
+            <button {{action "thouCloser"}}>DO IT BITCH</button>
+            <div id="answer1">ANSWER</div>
+
+            #2. Write a method which given a string, returns a string where every character in the original is doubled. For example, given the string "xyz", return the string "xxyyzz".
+            <form>
+                {{input type="text" value=string}}
+            </form>
+            <button {{action "doubleChar"}}>DO IT BITCH</button>
+            <div id="answer2">ANSWER</div>
+
+            #3. Write a method which takes an array of integers.  The method should return true if there is a way to split the array in two so that the sum of the numbers on one side of the split equals the sum of the numbers on the other side.
+            <form>
+                {{input type="text" value=eASArray}}
+            </form>
+            <button {{action "equalArraySplit"}}>DO IT BITCH</button>
+            <div id="answer3">ANSWER</div>
+
+
+            #4. Write a method which given a string, returns a string with an asterisk inserted between every character in the original.  Use recursion in your solution.
+            <form>
+                {{input type="text" value=aSString}}
+            </form>
+            <button {{action "asteriskString"}}>DO IT BITCH</button>
+            <div id="answer4">ANSWER</div>
+
+        </script>
+
+        <script type="text/x-handlebars" id="alexB">
+            #1. Write a method which given two integers, returns the integer that is closest to 1000. 
+            <form>
+                {{input type="text" value=int1}}
+                {{input type="text" value=int2}}
+            </form>
+            <button {{action "thouCloser"}}>DO IT BITCH</button>
+            <div id="answer1">ANSWER</div>
+
+            #2. Write a method which given a string, returns a string where every character in the original is doubled. For example, given the string "xyz", return the string "xxyyzz".
+            <form>
+                {{input type="text" value=string}}
+            </form>
+            <button {{action "doubleChar"}}>DO IT BITCH</button>
+            <div id="answer2">ANSWER</div>
+
+            #3. Write a method which takes an array of integers.  The method should return true if there is a way to split the array in two so that the sum of the numbers on one side of the split equals the sum of the numbers on the other side.
+            <form>
+                {{input type="text" value=eASArray}}
+            </form>
+            <button {{action "equalArraySplit"}}>DO IT BITCH</button>
+            <div id="answer3">ANSWER</div>
+
+
+            #4. Write a method which given a string, returns a string with an asterisk inserted between every character in the original.  Use recursion in your solution.
+            <form>
+                {{input type="text" value=aSString}}
+            </form>
+            <button {{action "asteriskString"}}>DO IT BITCH</button>
+            <div id="answer4">ANSWER</div>
+        </script>
+
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -40,11 +132,19 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/handlebars/handlebars.js"></script>
+        <script src="bower_components/ember/ember.js"></script>
+        <script src="bower_components/ember/ember-template-compiler.js"></script>
+
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
+        <script src="scripts/app.js"></script>
         <script src="scripts/main.js"></script>
+        <script src="scripts/controllers/about_controller.js"></script>
+        <script src="scripts/controllers/adaptiveInsights_controller.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>
