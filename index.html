@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>JSPlayground</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        
+
+        <link rel="stylesheet" href="styles/main.css">
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+            <!-- {{#link-to '/'}}Home{{/link-to}} -->
+        <script type="text/x-handlebars">
+            <div class="hero-unit">
+                <h1>plove&#8217;s JS Playground</h1>
+                <p>So I&#8217;ve been doing a good amount of JavaScript coding lately, ranging from technical screenings that come along as part of the job application process to challenges on sites such as Codility to simply utilizing new techniques I&#8217;ve been studying in my free time. Not all of them are worthy of their own repository, but I&#8217;ve grown tired of letting this code float off into the cosmos. Welcome to the playground!</p>
+            </div>
+
+            {{#link-to 'index'}}Home{{/link-to}}
+            {{#link-to 'adaptiveInsights'}}Adaptive Insights{{/link-to}}
+            {{#link-to 'codility'}}Codility{{/link-to}}
+            {{#link-to 'upsight'}}Upsight{{/link-to}}
+
+            <div class="mainContainer">    
+                {{outlet}}
+            </div>
+
+        </script>
+
+
+
+<!--     <button class="code3Btn" data-codeNum="3" {{action "toggleCode"}}>Show Code</button>
+    <p class="code code3">
+        JS CODE here 
+    </p> --> 
+        <script type="text/x-handlebars" id="adaptiveInsights">
+
+            <div class="codeQuestion">
+                <p class="">#1. Write a method which given two integers, returns the integer that is closest to 1000.</p>
+                <form>
+                    {{input type="text" value=int1}}
+                    {{input type="text" value=int2}}
+                    <button {{action "thouCloser"}}>DO IT</button>
+                </form>
+
+                <p>Returns: <span id="answer1"></span></p>
+            </div>
+
+            <div class="codeQuestion">
+                <p>#2. Write a method which given a string, returns a string where every character in the original is doubled. For example, given the string "xyz", return the string "xxyyzz".</p>
+                <form>
+                    {{input type="text" value=string}}
+                    <button {{action "doubleChar"}}>DO IT</button>
+                </form>
+
+                <p>Returns: <span id="answer2"></span></p>           
+            </div>
+
+            <div class="codeQuestion">
+                <p>#3. Write a method which takes an array of integers.  The method should return true if there is a way to split the array in two so that the sum of the numbers on one side of the split equals the sum of the numbers on the other side.</p>
+                <form>
+                    {{input type="text" value=eASArray}}
+                    <button {{action "equalArraySplit"}}>DO IT</button>
+                </form>
+
+                <p>Returns: <span id="answer3"></span></p>
+            </div>
+
+            <div class="codeQuestion">
+                <p>#4. Write a method which given a string, returns a string with an asterisk inserted between every character in the original.  Use recursion in your solution.</p>
+                <form>
+                    {{input type="text" value=aSString}}
+                    <button {{action "aS"}}>DO IT</button>
+                </form>
+
+                <p>Returns: <span id="answer4"></span></p>
+            </div>
+
+        </script>
+
+
+
+        <script type="text/x-handlebars" id="codility">
+            It&#8217;s going to take a while to format all these. Coming soon...
+        </script>
+
+
+
+        <script type="text/x-handlebars" id="upsight">
+            
+            <div class="codeQuestion"> 
+                <p>Using JavaScript, please write a function that checks for the validity of a set of 
+                strings given the following rules:</p>
+                <ol> 
+                  <li>Every lower-case letter 'a' through 'j' by itself is valid; for example, ‘j’ is a valid set of string,
+                     but ‘fj’ is not.</li>
+                  <li>If ϴ is a valid set of strings, then so is Zϴ.</li>
+                  <li>If ϴ and τ are valid sets of strings, then so are Nϴτ , Lϴτ , Qϴτ , and Rϴτ.</li>
+                  <li>All other strings are invalid.</li>
+                </ol> 
+                <p>The function should accept a parameter that consists of potential strings separated by whitespace 
+                and it would return one line per potential strings, followed by ‘VALID’ if the string passes 
+                the rules set above or ‘INVALID’ if it doesn&#8217;t.</p>
+     
+                Example:
+                 
+                <ul>
+                <li>validateString("Ze");
+                  Ze VALID</li>
+                 
+                <li>validateString("Za Nj");
+                  Za VALID
+                  Nj INVALID</li>
+                   
+                <li>validateString("QZja\nRhfa");
+                  QZja VALID
+                  Rhfa INVALID</li>
+                  
+                <li>validateString("QRZZaZZaj");
+                  QRZZaZZaj VALID</li>
+                </ul>
+
+                <form>
+                    {{input type="text" value=stringArg}}
+                    <button {{action "validateString" stringArg}}>DO IT</button>
+                </form>
+
+                <p>Returns: <span id="answer1"></span></p>
+            </div>
+
+        </script>
+
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
