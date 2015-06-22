@@ -6,10 +6,30 @@
 
 		actions: {
 
+			toggleCode: function(){
+				var codeNum = event.target.getAttribute("data-codeNum");
+
+				var code = $('.code' + codeNum); 
+				var btn = $('.code' + codeNum + 'Btn');
+
+				code.toggle();
+				
+				if (!this.isShowing) {
+					this.isShowing = true;
+					btn.html('Hide Code');
+				} else {
+					this.isShowing = false;
+					btn.html('Show Code');
+				}
+
+			},
+
 			thouCloser: function(){
 
 				var int1 = this.get('int1');
 				var int2 = this.get('int2');
+				this.set('int1', '');
+				this.set('int2', '');
 				var answer1 = $('#answer1');
 
 				if (Math.abs(1000 - int1) <= Math.abs(1000 - int2)) {
@@ -56,29 +76,20 @@
 					});
 
 					if (firstHalfTotal === secondHalfTotal) {
-						answer3.html('Returns True!');
+						answer3.html('true');
 						// return true;
 					} else {
-						answer3.html('Not yet bud');
+						answer3.html('false');
 					}
 				}				
 			},
 
-			asteriskString: function() {
-
+			aS: function() {
 				var aSString = this.get('aSString');
 				var answer4 = $('#answer4');
-
-				var firstLetter = aSString.charAt(0) + "*";
-				var n = aSString.length;
-
-				var returnValue4 = n > 1 ? firstLetter + asteriskString(aSString.substring(1)) : aSString.charAt(0);
-				answer4.html(returnValue4);
-				// return n > 1 ? firstLetter + asteriskString(aSString.substring(1)) : aSString.charAt(0);
-
+				answer4.html(asteriskString(aSString));
 			}
 
-		
 		}
 
 	});

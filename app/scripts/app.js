@@ -11,9 +11,9 @@
 
 	App.Router.map(function() {
 		this.route('index', {path: '/'});
-		this.resource('about');
 		this.resource('adaptiveInsights');
-		this.resource('alexB');
+		this.resource('codility');
+		this.resource('upsight');
 	});
 
 
