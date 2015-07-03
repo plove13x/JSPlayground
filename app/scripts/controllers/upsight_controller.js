@@ -35,6 +35,10 @@
 
 		actions: {
 
+			showCode: function() {
+				$('.codeConsole').html('<img src="images/code/upsightCode.png">');
+			},
+
 			validateString: function(stringArg) {
 				  stringArg = stringArg.replace(/\\n/g, " ");
 				  stringArg = stringArg.replace(/\"/g, "");

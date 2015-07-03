@@ -6,6 +6,14 @@
 
 		actions: {
 
+			showCode: function(){
+				var codeNum = event.target.getAttribute("data-codeNum");
+				console.log(codeNum);
+				$('.codeConsole').html('<img src="images/code/adaptiveInsightsCode' + codeNum + '.png">');
+			},
+
+			// pick up here combining toggleCode with sipree's showCode
+
 			toggleCode: function(){
 				var codeNum = event.target.getAttribute("data-codeNum");
 
@@ -62,10 +70,11 @@
 
 				var convertToNumArray = JSON.parse("[" + eASArray + "]");
 				var eASArray = convertToNumArray[0];
+				console.log(eASArray);
 
+				var canSplit = false;
 				for (var i = 1; i < eASArray.length; i++) {
 					var firstHalf = eASArray.slice(0, i);
-					console.log(firstHalf);
 					var firstHalfTotal = firstHalf.reduce(function(a, b) {
 						return a + b;
 					});
@@ -75,12 +84,19 @@
 						return a + b;
 					});
 
+					console.log(firstHalfTotal, secondHalfTotal);
+
 					if (firstHalfTotal === secondHalfTotal) {
-						answer3.html('true');
-						// return true;
-					} else {
-						answer3.html('false');
-					}
+						canSplit = true;
+					} 
+				}
+				// this.set('eASArray', "");
+				if (!canSplit) {
+					answer3.html('false');
+					// return false;
+				} else {
+					answer3.html('true');
+					// return true;
 				}				
 			},
 

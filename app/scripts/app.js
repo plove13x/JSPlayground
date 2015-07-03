@@ -13,6 +13,7 @@
 		this.route('index', {path: '/'});
 		this.resource('adaptiveInsights');
 		this.resource('codility');
+		this.resource('sipree');
 		this.resource('upsight');
 	});
 
